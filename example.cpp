@@ -1,6 +1,9 @@
 // build all -> python setup.py build_ext --inplace
 
 #include <pybind11/pybind11.h>
+
+//this enables automatic conversion between python lists and c++ STL containers (vectors)
+#include <pybind11/stl.h>
 #include <vector>
 
 int add(int i, int j)
@@ -31,5 +34,5 @@ PYBIND11_MODULE(example, m)
 
     m.def("add", &add, "A function that adds two numbers");
     m.def("sub", &sub, "A function that subs two numbers");
-    m.def("process_image", &process_image, "A function to process an image")
+    m.def("process_image", &process_image, "A function to process an image");
 }

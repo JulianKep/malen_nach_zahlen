@@ -9,10 +9,12 @@ image = [
 ]
 
 
-image = cv2.imread('image.jpg')
+""" image = cv2.imread('image.jpg')
 cv2.imshow('My Image', image)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
+cv2.destroyAllWindows() """
 
-print(example.add(3, 5))
-print(example.sub(8, 7))
+""" print(example.add(3, 5))
+print(example.sub(8, 7)) """
+
+print(example.process_image(image))
