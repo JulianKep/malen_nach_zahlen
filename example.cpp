@@ -18,17 +18,18 @@ std::vector<std::vector<std::vector<uint8_t>>> choose_colors(std::vector<std::ve
     {
         for (size_t height = 0; height < image[width].size(); height++)
         {
-            float current_min_distance = 9999;
+            float current_min_distance = 9999.0;
             for (size_t i = 0; i < color_vector.size(); i++)
             {
                 float current_distance = distance(image[width][height], color_vector[i]);
-                size_t color_index = 0;
+
                 if (current_distance <= current_min_distance)
                 {
                     current_min_distance = current_distance;
-                    color_index = i;
+
+                    image[width][height] = color_vector[i];
                 }
-                image[width][height] = color_vector[i];
+                
             }
             
         }
